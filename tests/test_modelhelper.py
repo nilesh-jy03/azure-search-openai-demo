@@ -28,7 +28,7 @@ def test_num_tokens_from_messages():
         # 1 token : 5 tokens
         "content": "Hello, how are you?",
     }
-    model = "gpt-35-turbo"
+    model = "gpt-4-32k"
     assert num_tokens_from_messages(message, model) == 9
 
 
@@ -44,7 +44,7 @@ def test_num_tokens_from_messages_gpt4():
 
 
 def test_get_oai_chatmodel_tiktok_mapped():
-    assert get_oai_chatmodel_tiktok("gpt-35-turbo") == "gpt-3.5-turbo"
+    assert get_oai_chatmodel_tiktok("gpt-4-32k") == "gpt-4-32k"
     assert get_oai_chatmodel_tiktok("gpt-35-turbo-16k") == "gpt-3.5-turbo-16k"
 
 
