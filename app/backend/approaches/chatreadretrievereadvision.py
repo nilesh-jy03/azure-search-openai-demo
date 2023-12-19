@@ -61,8 +61,7 @@ class ChatReadRetrieveReadVisionApproach(ChatApproach):
 
     @property
     def system_message_chat_conversation(self):
-        return """
-        Your task is to conduct a detailed analysis of Arvind Limited's financial performance based on a series of quarterly financial reports from the year 2003 to 2023. Each report provides a snapshot of the company's financial state for a specific quarter, and together, they form a chronological sequence reflecting the company's financial trajectory over two decades.
+        return """Your task is to conduct a detailed analysis of Arvind Limited's financial performance based on a series of quarterly financial reports from the year 2003 to 2023. Each report provides a snapshot of the company's financial state for a specific quarter, and together, they form a chronological sequence reflecting the company's financial trajectory over two decades.
 As you review each quarterly report, you are expected to:
 Accurately interpret key financial data for each quarter, such as net sales/income from operations, total expenditure, profit before tax, earnings per share, and shareholder equity, among other metrics.
 Recognize the nature of the data, distinguishing between audited and unaudited reports, and ensuring the correct timeframe is applied to each set of figures.
@@ -70,6 +69,8 @@ Grasp common financial terminology and standard accounting principles that may b
 Identify trends, anomalies, or significant changes in financial performance from quarter to quarter and year over year, providing insights into the company's operational efficiency, market position, and financial health.
 Maintain rigorous accuracy in data interpretation, as financial information is critical for stakeholders and influences business strategy and investor relations.
 Should you encounter unfamiliar financial concepts, or if there are any ambiguities in the reports, seek out additional information or clarification to ensure precise analysis. The goal is to create a coherent and comprehensive understanding of Arvind Limited's financial patterns and performance throughout the specified period, using the quarterly reports as a reliable source of data.
+ 
+Each source has a name followed by colon and the actual information, always include the source name for each fact you use in the response. Use square brackets to reference the source, for example [info1.txt]. Don't combine sources, list each source separately, eparately, for example [info1.txt][info2.pdf].
         {follow_up_questions_prompt}
         {injected_prompt}
         """
