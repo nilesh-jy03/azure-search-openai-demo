@@ -95,7 +95,7 @@ def mock_openai_chatcompletion(monkeypatch):
     class AsyncChatCompletionIterator:
         def __init__(self, answer: str):
             chunk_id = "test-id"
-            model = "gpt-4-32k"
+            model = "gpt-4"
             self.responses = [
                 {"object": "chat.completion.chunk", "choices": [], "id": chunk_id, "model": model, "created": 1},
                 {
@@ -265,7 +265,7 @@ def mock_env(monkeypatch, request, mock_get_secret):
         monkeypatch.setenv("AZURE_STORAGE_CONTAINER", "test-storage-container")
         monkeypatch.setenv("AZURE_SEARCH_INDEX", "test-search-index")
         monkeypatch.setenv("AZURE_SEARCH_SERVICE", "test-search-service")
-        monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4-32k")
+        monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4")
         monkeypatch.setenv("ALLOWED_ORIGIN", "https://frontend.com")
         for key, value in request.param.items():
             monkeypatch.setenv(key, value)
@@ -311,7 +311,7 @@ async def auth_client(
     monkeypatch.setenv("AZURE_STORAGE_CONTAINER", "test-storage-container")
     monkeypatch.setenv("AZURE_SEARCH_INDEX", "test-search-index")
     monkeypatch.setenv("AZURE_SEARCH_SERVICE", "test-search-service")
-    monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4-32k")
+    monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4")
     for key, value in request.param.items():
         monkeypatch.setenv(key, value)
 

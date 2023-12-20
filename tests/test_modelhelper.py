@@ -13,7 +13,7 @@ def test_get_token_limit():
     assert get_token_limit("gpt-35-turbo-16k") == 16000
     assert get_token_limit("gpt-3.5-turbo-16k") == 16000
     assert get_token_limit("gpt-4") == 8100
-    assert get_token_limit("gpt-4-32k") == 32000
+    assert get_token_limit("gpt-4") == 32000
 
 
 def test_get_token_limit_error():
@@ -28,7 +28,7 @@ def test_num_tokens_from_messages():
         # 1 token : 5 tokens
         "content": "Hello, how are you?",
     }
-    model = "gpt-4-32k"
+    model = "gpt-4"
     assert num_tokens_from_messages(message, model) == 9
 
 
@@ -44,7 +44,7 @@ def test_num_tokens_from_messages_gpt4():
 
 
 def test_get_oai_chatmodel_tiktok_mapped():
-    assert get_oai_chatmodel_tiktok("gpt-4-32k") == "gpt-4-32k"
+    assert get_oai_chatmodel_tiktok("gpt-4") == "gpt-4"
     assert get_oai_chatmodel_tiktok("gpt-35-turbo-16k") == "gpt-3.5-turbo-16k"
 
 

@@ -45,7 +45,7 @@ param keyVaultServiceName string = ''
 param computerVisionSecretName string = 'computerVisionSecret'
 
 @description('Location for the OpenAI resource group')
-@allowed(['canadaeast', 'eastus', 'eastus2', 'francecentral', 'switzerlandnorth', 'uksouth', 'japaneast', 'northcentralus', 'australiaeast', 'swedencentral'])
+@allowed(['canadaeast', 'eastus', 'eastus2', 'francecentral', 'switzerlandnorth', 'uksouth', 'southindia', 'japaneast', 'northcentralus', 'australiaeast', 'swedencentral'])
 @metadata({
   azd: {
     type: 'location'
@@ -69,10 +69,10 @@ param computerVisionResourceGroupLocation string = 'eastus' // Vision vectorize 
 param computerVisionSkuName string = 'S1'
 
 param chatGptDeploymentName string // Set in main.parameters.json
-param chatGptDeploymentCapacity int = 80
+param chatGptDeploymentCapacity int = 150
 param chatGpt4vDeploymentCapacity int = 10
-param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-4-32k' : 'gpt-3.5-turbo'
-param chatGptModelVersion string = '0613'
+param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-4' : 'gpt-3.5-turbo'
+param chatGptModelVersion string = '1106-Preview'
 param embeddingDeploymentName string // Set in main.parameters.json
 param embeddingDeploymentCapacity int = 350
 param embeddingModelName string = 'text-embedding-ada-002'
